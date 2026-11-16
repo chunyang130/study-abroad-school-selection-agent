@@ -1,0 +1,22 @@
+name: tests
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: 安裝套件
+        run: pip install -r requirements.txt
+      - name: 正常範例要通過檢查
+        run: python build_school_list.py --input examples/sample_student.json --out output/initial_list.xlsx
+      - name: 錯誤範例必須被擋下
+        run: "! python build_school_list.py --input examples/sample_with_errors.json --out output/bad.xlsx"
