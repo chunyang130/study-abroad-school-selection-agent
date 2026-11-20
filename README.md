@@ -3,7 +3,7 @@
 > A Claude Agent Skill for study-abroad school selection: structured intake, evidence-based tiering against historical admission data, strict first-party-source rules to prevent hallucination, and a validated Excel deliverable.
 
 把留學顧問「背景評估 → 科系討論 → 判讀落點 → 產出選校表」的流程，做成可重複使用的 Claude Agent Skill。
-這個工具我在工作上實際使用，**選校表的資料整理時間由約 2 小時縮短到約 10 分鐘，試作的選校表 0 筆錯誤資料**，前端顧問可以直接點連結審閱。
+這個工具我在工作上實際使用，**選校表的資料整理時間由約 2 小時縮短到約 10 分鐘**。試作的選校表僅 1 筆資料有誤，因為每個欄位都附官網連結，顧問審閱時當場就發現並更正。
 
 本 repo 為公開版：公司名稱、內部檔案路徑與真實錄取榜單已移除，附錄換成虛構範例；Agent 的流程與規則與實際使用的版本相同。
 
